@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alpine.js 3 + Tailwindcss</title>
+    <!--TailwindCSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Alpine.js-->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body x-data={showModal:false}>
+    <div x-show="showModal" class="absolute grid place-items-center bg-black/30 w-screen h-screen p-6 overflow-y-scroll overflow-x-hidden">
+      <div id="Card" class="relative grid w-5/6 shadow-lg">
+        <div>
+          <div class="absolute text-right top-0 right-0 px-5 pt-4">
+            <img x-on:click="showModal=false" src="img\x-16.svg" class="w-6 cursor-pointer">
+          </div>
+          <img src="https://i.imgur.com/GTsbQhT.jpg" class="rounded-t-md"/>
+        </div>
+        <div id="Card Body" class="bg-pink-200 rounded-b-md px-10 py-3">
+          <h1 class="text-3xl">
+            Tanjiro & Nezuko, a tragic but wholesome story
+          </h1>
+          <p class="pt-3">
+            Nezuko was originally an ordinary girl born into a poor yet happy
+            family. The secondborn of the six Kamado siblings, Nezuko maintained
+            a strong bond with her mother and siblings. After a demon sneaked
+            into their house and killed everyone, the only survivors of the
+            massacre were Nezuko and her older brother Tanjiro who had been away
+            at the time. Nezuko was only able to survive because Kibutsuji had
+            transformed her into a demon. Unfortunately this meant Nezuko had a
+            strong craving for human blood and initially attacked Tanjiro.
+            Nezuko was able to hold back her urge to devour and after Tanjiro
+            convinced a Demon Slayer, Tanjiro got the necessary information to
+            train under a retired Demon Slayer to be able to protect her now
+            controlled sister.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="Base" class="grid bg-red-200 h-screen w-screen place-items-center">
+      <button x-on:click="showModal=true" class="bg-pink-400 h-10 w-44 px-5 rounded hover:bg-pink-500">
+        Show cute siblings
+      </button>
+    </div>
+  </body>
+</html>
