@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Alpine.js 3 + Tailwindcss</title>
+    <!--TailwindCSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Alpine.js-->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body x-data="{tab:0}">
+	  <div id="Fondo" class="bg-red-200 h-screen w-screen">
+		  <div id="TabHeader" class="flex space-x-3 items-end justify-center h-14 bg-pink-400 drop-shadow-md">
+			  <div id="TanjiroTab" x-on:click="tab=0"
+				  :class="{'cursor-pointer border-b-4 border-white/50 px-5 text-white/50' : tab!==0,
+			       		   'cursor-pointer border-b-4 px-10 text-white' : tab===0}">Tanjiro</div>
+		    <div id="ZenitsuTab" x-on:click="tab=1"
+			     :class="{'cursor-pointer border-b-4 border-white/50 px-5 text-white/50' : tab!==1,
+			       	      'cursor-pointer border-b-4 px-10 text-white' : tab===1}">Zenitsu</div>
+		    <div id="InosukeTab" x-on:click="tab=2"
+			     :class="{'cursor-pointer border-b-4 border-white/50 px-5 text-white/50' : tab!==2,
+			       	      'cursor-pointer border-b-4 px-10 text-white' : tab===2}">Inosuke</div>
+		  </div>
+		  <div class="pt-7 px-5">
+			  <p x-show="tab===0">He is a Demon Slayer in the Demon Slayer Corps, who joined to find a remedy to turn his sister, Nezuko Kamado, back into a human and to hunt down and kill demons, and later swore to defeat Muzan Kibutsuji, the Demon King, in order to prevent others from suffering the same fate as him.</p>
+			  <p x-show="tab===1">Zenitsu is a young boy of average height with fair skin and downward-sloped, scared-looking eyes that fade from soft brown to gold. He has short, yellow hair of varying lengths, cutting off squarely at the ends where it fades to a darker orange color, that falls in front of his face in uneven bangs.</p>
+			  <p x-show="tab===2">Inosuke is a young man of average height and pale complexion with an extremely toned and muscular build for his age. He has an incredibly pretty and feminine face Inosuke wears his altered version of the standard Demon Slayer uniform, which consists only of the baggy hakama pants, his tinted a dark gray-blue, which he fastens around his hips with a thick belt of fluffy brown animal fur.</p>
+		  </div>
+  </body>
+</html>
